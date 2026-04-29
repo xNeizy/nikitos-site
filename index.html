@@ -117,12 +117,32 @@
       transform: translateY(-3px);
       box-shadow: 0 0 15px rgba(0,191,255,0.5);
     }
+	
+	.socials button {
+	  color: #7fdfff;
+	  font-size: 18px;
+	  padding: 10px 14px;
+	  border-radius: 10px;
+	  border: 1px solid rgba(127,223,255,0.3);
+	  background: transparent;
+	  cursor: pointer;
+	  transition: 0.3s ease;
+	}
+
+	.socials button:hover {
+	  background: rgba(0,191,255,0.2);
+	  transform: translateY(-3px);
+	  box-shadow: 0 0 15px rgba(0,191,255,0.5);
+	}
 
   </style>
 </head>
 <body>
 
-  <img src="background.gif" class="video-bg" alt="background">
+  <!-- Видео фон -->
+  <video class="video-bg" autoplay muted loop>
+    <source src="background.mp4" type="video/mp4">
+  </video>
 
   <div class="overlay"></div>
 
@@ -137,9 +157,18 @@
         Как говорила одна известная личность: "Всё, что не смывается - съедается. Он НИКОГДА не смывал..."
       </p>
 
-      <div class="socials">
-        <a href="https://t.me/nik_fury">TG</a>
-      </div>
+	<div class="socials">
+	  <button onclick="playMusic()">▶ Play</button>
+	</div>
+
+	<audio id="music" src="music.mp3"></audio>
+
+	<script>
+	  function playMusic() {
+		const audio = document.getElementById('music');
+		audio.play();
+	  }
+	</script>
 
     </div>
   </div>
